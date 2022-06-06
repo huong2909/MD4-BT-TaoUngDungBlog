@@ -22,7 +22,17 @@
         </tr>
         <tr>
             <td>Content:</td>
-            <td><input type="text" th:field="*{content}"/></td>
+            <td><textarea rows="9" cols="70" th:field="*{content}"/></textarea></td>
+        </tr>
+        <input th:type="hidden" name="dateTime" th:field="*{dateTime}">
+
+        <tr>
+            <td>Category:</td>
+            <td>
+                <select th:field="*{category}">
+                    <option th:each="p : ${categories}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td></td>

@@ -10,6 +10,10 @@ public class Blog {
     private Long id;
     private String name;
     private String content;
+    private String dateTime;
+
+    @ManyToOne
+    private Category category;
 
     public Blog() {
     }
@@ -18,6 +22,21 @@ public class Blog {
         this.id = id;
         this.name = name;
         this.content = content;
+    }
+
+    public Blog(Long id, String name, String content, Category category) {
+        this.id = id;
+        this.name = name;
+        this.content = content;
+        this.category = category;
+    }
+
+    public Blog(Long id, String name, String content, String dateTime, Category category) {
+        this.id = id;
+        this.name = name;
+        this.content = content;
+        this.dateTime = dateTime;
+        this.category = category;
     }
 
     public Long getId() {
@@ -42,5 +61,21 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 }
