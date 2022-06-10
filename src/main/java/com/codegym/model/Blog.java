@@ -1,5 +1,8 @@
 package com.codegym.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +16,7 @@ public class Blog {
     private String dateTime;
 
     @ManyToOne
+    @JsonManagedReference(value = "category-blog")
     private Category category;
 
     public Blog() {
